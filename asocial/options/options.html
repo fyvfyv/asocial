@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Asocial Options</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="options-title" data-i18n="options_schedule"></h1>
+
+        <table class="time-table"></table>
+
+        <button type="button" class="btn" id="add-button" data-i18n="options_newrule"></button>
+
+        <div class="add-rule-form" id="add-rule-container">
+            <form action="#" method="GET" id="add-rule-form">
+                <fieldset class="form-row">
+                    <span class="form-row-title" data-i18n="options_time"></span>
+                    <label class="form-label" for="start-time" data-i18n="options_from"></label>
+                    <input class="text-input" type="text" name="start_time" pattern="^([0-9]{1,2})[.:, ]?([0-9]{2})" id="start-time" required>
+                    <label class="form-label" for="end-time" data-i18n="options_to"></label>
+                    <input class="text-input" type="text" name="end_time" pattern="^([0-9]{1,2})[.:, ]?([0-9]{2})" id="end-time" required>
+                </fieldset>
+                <fieldset class="form-row">
+                    <span class="form-row-title" data-i18n="options_days">Дни</span>
+                    <span class="checkbox-buttons">
+                        <input class="checkbox-buttons-input" name="day" type="checkbox" id="monday" value=1>
+                        <label class="checkbox-buttons-label" for="monday"><span data-i18n="days_1"></span></label>
+                        <input class="checkbox-buttons-input" name="day" type="checkbox" id="tuesday" value=2>
+                        <label class="checkbox-buttons-label" for="tuesday"><span data-i18n="days_2"></span></label>
+                        <input class="checkbox-buttons-input" name="day" type="checkbox" id="wednesday" value=3>
+                        <label class="checkbox-buttons-label" for="wednesday"><span data-i18n="days_3"></span></label>
+                        <input class="checkbox-buttons-input" name="day" type="checkbox" id="thursday" value=4>
+                        <label class="checkbox-buttons-label" for="thursday"><span data-i18n="days_4"></span></label>
+                        <input class="checkbox-buttons-input" name="day" type="checkbox" id="friday" value=5>
+                        <label class="checkbox-buttons-label" for="friday"><span data-i18n="days_5"></span></label>
+                        <input class="checkbox-buttons-input" name="day" type="checkbox" id="saturday" value=6>
+                        <label class="checkbox-buttons-label" for="saturday"><span data-i18n="days_6"></span></label>
+                        <input class="checkbox-buttons-input" name="day" type="checkbox" id="sunday" value=0>
+                        <label class="checkbox-buttons-label" for="sunday"><span data-i18n="days_0"></span></label>
+                    </span>
+                </fieldset>
+                <fieldset class="form-row">
+                    <span class="form-row-title" data-i18n="options_sites"></span>
+                    <span class="checkbox-buttons">
+                        <input class="checkbox-buttons-input" type="checkbox" name="network" id="vk" value="vk">
+                        <label class="checkbox-buttons-label" for="vk"><span class="icon icon-vk"></span></label>
+                        <input class="checkbox-buttons-input" type="checkbox" name="network" id="facebook" value="facebook">
+                        <label class="checkbox-buttons-label" for="facebook"><span class="icon icon-facebook"></span></label>
+                        <input class="checkbox-buttons-input" type="checkbox" name="network" id="twitter" value="twitter">
+                        <label class="checkbox-buttons-label" for="twitter"><span class="icon icon-twitter"></span></label>
+                        <input class="checkbox-buttons-input" type="checkbox" name="network" id="ok" value="ok">
+                        <label class="checkbox-buttons-label" for="ok"><span class="icon icon-ok"></span></label>
+                    </span>
+                </fieldset>
+                <fieldset class="form-row form-actions">
+                    <button class="btn btn-add" type="submit" name="add_button" id="add-button" data-i18n="options_add"></button>
+                    <button class="btn btn-save" type="submit" name="save_button" id="save-button" data-i18n="options_save"></button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <article class="help">
+        <h2 data-i18n="help_title"></h2>
+        <section data-i18n="help_text"></<section>
+    </article>
+
+    <template id="row-template">
+        <table>
+            <tr class="rule-line">
+                <td class="days"></td>
+                <td class="time"></td>
+                <td class="networks"></td>
+                <td class="delete">
+                    <button class="btn-delete"></button>
+                </td>
+            </tr>
+        </table>
+    </template>
+
+    <script src="options.js"></script>
+</body>
+</html>

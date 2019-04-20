@@ -1,0 +1,31 @@
+.asocial_block {
+    min-height: 300px;
+
+    padding-top: 200px;
+
+    font-size: 16px;
+    line-height: 1.25;
+    text-align: center;
+
+    float: right;
+    width: 590px;
+}
+
+@media(min-width: 1236px) {
+    body.three-col .asocial_block {
+        float: left;
+        margin: 0 10px;
+    }
+}
+
+.win10-wrapper .asocial_block {
+    float: none;
+    width: 100%;
+}
+
+@media(min-width: 1236px) {
+    body.three-col.win10-wrapper .asocial_block {
+        float: left;
+        margin: 0;
+    }
+}

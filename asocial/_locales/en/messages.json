@@ -1,0 +1,86 @@
+{
+  "motivateMessage": {
+    "message": "There is nothing you are looking for. Go and work, my friend.",
+    "description": "The main motivational message"
+  },
+  "days_1": {
+    "message": "Mo",
+    "description": "Monday"
+  },
+  "days_2": {
+    "message": "Tu",
+    "description": "Tuesday"
+  },
+  "days_3": {
+    "message": "We",
+    "description": "Wednesday"
+  },
+  "days_4": {
+    "message": "Th",
+    "description": "Thursday"
+  },
+  "days_5": {
+    "message": "Fr",
+    "description": "Friday"
+  },
+  "days_6": {
+    "message": "Sa",
+    "description": "Saturday"
+  },
+  "days_0": {
+    "message": "Su",
+    "description": "Sunday"
+  },
+  "options_everyday": {
+    "message": "Everyday",
+    "description": "When all days were chosen"
+  },
+  "options_all": {
+    "message": "All"
+  },
+  "options_from": {
+    "message": "From"
+  },
+  "options_to": {
+    "message": "Until"
+  },
+  "options_allday": {
+    "message": "Whole day"
+  },
+  "options_schedule": {
+    "message": "Schedule"
+  },
+  "options_time": {
+    "message": "Time"
+  },
+  "options_days": {
+    "message": "Days"
+  },
+  "options_sites": {
+    "message": "Sites"
+  },
+  "options_add": {
+    "message": "Add"
+  },
+  "options_save": {
+    "message": "Save"
+  },
+  "options_newrule": {
+    "message": "New rule"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "help_title": {
+    "message": "How to use"
+  },
+  "help_text": {
+    "message": "<p>Hide news feed in social networks to prevent be distracted.</p><p><b>Set up shedule.</b> Choose time and days when you want to focus. Choose sites which makes you distracted.</p><p>We can block Twitter, Facebook, VK and Ok.ru.</p>"
+  },
+  "title_closed": {
+    "message": "Blocked until"
+  },
+  "title_tomorrow": {
+    "message": "tomorrow"
+  }
+}

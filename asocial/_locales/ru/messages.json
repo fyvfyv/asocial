@@ -1,0 +1,89 @@
+{
+  "motivateMessage": {
+    "message": "Здесь нет того, что ищешь ты. Работать иди, друг мой.",
+    "description": "Главное мотивационной сообщение"
+  },
+  "days_1": {
+    "message": "Пн",
+    "description": "Понедельник"
+  },
+  "days_2": {
+    "message": "Вт",
+    "description": "Вторник"
+  },
+  "days_3": {
+    "message": "Ср",
+    "description": "Среда"
+  },
+  "days_4": {
+    "message": "Чт",
+    "description": "Четверг"
+  },
+  "days_5": {
+    "message": "Пт",
+    "description": "Пятница"
+  },
+  "days_6": {
+    "message": "Сб",
+    "description": "Суббота"
+  },
+  "days_0": {
+    "message": "Вс",
+    "description": "Воскресенье"
+  },
+  "options_everyday": {
+    "message": "Каждый день",
+    "description": "Если выбраны все дни недели"
+  },
+  "options_all": {
+    "message": "Все"
+  },
+  "options_from": {
+    "message": "С"
+  },
+  "options_to": {
+    "message": "До"
+  },
+  "options_allday": {
+    "message": "Весь день"
+  },
+  "options_schedule": {
+    "message": "Расписание"
+  },
+  "options_time": {
+    "message": "Время",
+    "description": "Легенда полей со временм"
+  },
+  "options_days": {
+    "message": "Дни",
+    "description": "Легенда кнопок с днями"
+  },
+  "options_sites": {
+    "message": "Сайты",
+    "description": "Легенда кнопок с сайтам"
+  },
+  "options_add": {
+    "message": "Добавить"
+  },
+  "options_save": {
+    "message": "Сохранить"
+  },
+  "options_newrule": {
+    "message": "Новое правило"
+  },
+  "delete": {
+    "message": "Удалить"
+  },
+  "help_title": {
+    "message": "Как пользоваться"
+  },
+  "help_text": {
+    "message": "<p>Скройте ленту новостей в социальных сетях, чтобы не отвлекаться от работы.</p><p><b>Настройте расписание.</b> Выберите время и дни, когда хотите сосредоточиться. Отметьте сайты, которые вас отвлекают.</p><p>Пока мы умеем блокировать Твитер, Фейсбук, Вконтакте и Одноклассники.</p>"
+  },
+  "title_closed": {
+    "message": "Заблокировано до"
+  },
+  "title_tomorrow": {
+    "message": "завтра"
+  }
+}

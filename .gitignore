@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+
+asocial/content/*.js
+asocial/options/options.js
+asocial/event/
+asocial/background/
+
+dist

@@ -1,0 +1,29 @@
+{
+  "name": "asocial",
+  "version": "0.0.1",
+  "description": "Browser extension to block feeds in social networks",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint .",
+    "stylelint": "stylelint \"**/*.css\"",
+    "test": "npm run eslint",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fyvfyv/asocial.git"
+  },
+  "private": true,
+  "author": "fyvfyv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fyvfyv/asocial/issues"
+  },
+  "homepage": "https://github.com/fyvfyv/asocial#readme",
+  "devDependencies": {
+    "eslint": "^2.10.2",
+    "stylelint": "^6.5.1",
+    "stylelint-config-standard": "^8.0.0",
+    "webpack": "^1.13.1"
+  }
+}
