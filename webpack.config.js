@@ -6,7 +6,8 @@ module.exports = [
             vk: './src/content/networks/vk.js',
             fb: './src/content/networks/facebook.js',
             tw: './src/content/networks/twitter.js',
-            ok: './src/content/networks/odnoklassniki.js'
+            ok: './src/content/networks/odnoklassniki.js',
+            yt: './src/content/networks/youtube.js'
         },
 
         output: {

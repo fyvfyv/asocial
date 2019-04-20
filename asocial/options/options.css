@@ -27,7 +27,7 @@ body {
 }
 
 .time-table {
-    width: 410px;
+    width: 430px;
 
     border-collapse: collapse;
 }
@@ -54,7 +54,7 @@ body {
 }
 
 .networks {
-    width: 90px;
+    width: 110px;
 
     padding-top: 5px;
     padding-bottom: 5px;
@@ -291,6 +291,10 @@ body {
 
 .icon-ok {
     background-image: url('external/svg/ok.svg');
+}
+
+.icon-youtube {
+    background-image: url('external/svg/youtube.svg');
 }
 
 .btn-delete {
