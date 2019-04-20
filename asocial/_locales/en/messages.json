@@ -75,7 +75,7 @@
     "message": "How to use"
   },
   "help_text": {
-    "message": "<p>Hide news feed in social networks to prevent be distracted.</p><p><b>Set up shedule.</b> Choose time and days when you want to focus. Choose sites which makes you distracted.</p><p>We can block Twitter, Facebook, VK and Ok.ru.</p>"
+    "message": "<p>Hide news feed in social networks to prevent be distracted.</p><p><b>Set up shedule.</b> Choose time and days when you want to focus. Choose sites which makes you distracted.</p><p>We can block Twitter, Facebook, VK, Ok.ru, Youtube and Reddit.</p>"
   },
   "title_closed": {
     "message": "Blocked until"
