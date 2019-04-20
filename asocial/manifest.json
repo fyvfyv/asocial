@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Asocial",
+  "name": "Asocial 2",
   "default_locale": "en",
   "description": "Make you more concentrated. Hide newsfeed of popular social networks on schedule. Supported sites: Facebook, Twitter, Vk.com, Ok.ru",
   "version": "0.0.1",
@@ -45,7 +45,7 @@
       "js": ["content/reddit.js"],
       "css": ["content/reddit.css"],
       "run_at": "document_start"
-    }    
+    }
   ],
   "icons": {
     "48": "icon-48.png"
