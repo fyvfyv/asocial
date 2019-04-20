@@ -39,7 +39,13 @@
       "js": ["content/yt.js"],
       "css": ["content/yt.css"],
       "run_at": "document_start"
-    }
+    },
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "js": ["content/reddit.js"],
+      "css": ["content/reddit.css"],
+      "run_at": "document_start"
+    }    
   ],
   "icons": {
     "48": "icon-48.png"
