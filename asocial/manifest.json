@@ -3,7 +3,7 @@
 
   "name": "Asocial 2",
   "default_locale": "en",
-  "description": "Make you more concentrated. Hide newsfeed of popular social networks on schedule. Supported sites: Facebook, Twitter, Vk.com, Ok.ru, Reddit, Youtube.",
+  "description": "Hide newsfeed of popular social networks on schedule. Supported sites: Facebook, Twitter, Vk.com, Ok.ru, Reddit, Youtube.",
   "version": "0.0.1",
 
   "browser_action": {
