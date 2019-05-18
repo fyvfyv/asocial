@@ -13,6 +13,7 @@ chrome.runtime.onMessage.addListener(function(network, sender) {
         );
 
         changeTitle(enabledRules);
+        utils.setIcon(isSiteBlocked);
     });
 });
 
