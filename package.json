@@ -24,6 +24,6 @@
     "eslint": "^2.10.2",
     "stylelint": "^6.5.1",
     "stylelint-config-standard": "^8.0.0",
-    "webpack": "^1.13.1"
+    "webpack": "^4.33.0"
   }
 }
