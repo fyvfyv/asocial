@@ -1,9 +1,9 @@
 'use strict';
 
-var FormManager = require('./formmanager');
-var Rules = require('./rules');
-var TableController = require('./table');
-var translate = require('./translate');
+import FormManager from './formmanager';
+import Rules from './rules';
+import TableController from './table';
+import translate from './translate';
 
 var rulesContainer;
 var currentRule;

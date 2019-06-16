@@ -40,4 +40,4 @@ Rules.prototype.edit = function(number, rule) {
     chrome.storage.sync.set(this.storage);
 };
 
-module.exports = Rules;
+export default Rules;

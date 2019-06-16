@@ -1,6 +1,6 @@
 'use strict';
 
-var utils = require('../utils');
+import utils from '../utils';
 
 function setDefaultTitle() {
     utils.setTitle('Asocial');

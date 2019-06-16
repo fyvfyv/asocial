@@ -1,7 +1,7 @@
 'use strict';
 
-var utils = require('../utils');
-var TimeHelper = require('../timehelper');
+import utils from '../utils';
+import TimeHelper from '../timehelper';
 
 chrome.runtime.onMessage.addListener(function(network, sender) {
     shouldDisable(network, function(enabledRules) {

@@ -30,9 +30,9 @@
  * @typedef {Number[]} RuleDays
  */
 
-var utils = require('../utils');
-var EventEmitter = require('./eventemitter');
-var TimeHelper = require('../timehelper');
+import utils from '../utils';
+import EventEmitter from './eventemitter';
+import TimeHelper from '../timehelper';
 
 function FormManager() {
     this.form = document.querySelector('#add-rule-form');
@@ -192,4 +192,4 @@ function FormManager() {
 
 utils.inherit(FormManager, EventEmitter);
 
-module.exports = new FormManager();
+export default new FormManager();

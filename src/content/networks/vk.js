@@ -1,6 +1,6 @@
 'use strict';
 
-var blocker = require('../blocker.js');
+import blocker from '../blocker.js';
 
 function makeAsocialBlock() {
     /**

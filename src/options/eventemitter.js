@@ -49,4 +49,4 @@ EventEmitter.prototype.un = function(event, callback) {
     }
 };
 
-module.exports = EventEmitter;
+export default EventEmitter;

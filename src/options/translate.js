@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = {
+export default {
     /**
      * Translate HTML content with chrome.i18n
      */

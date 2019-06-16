@@ -1,9 +1,9 @@
 'use strict';
 
-var TimeHelper = require('../timehelper');
-var EventEmitter = require('./eventemitter');
+import TimeHelper from '../timehelper';
+import EventEmitter from './eventemitter';
 
-var utils = require('../utils');
+import utils from '../utils';
 
 function getDay(n) {
     return chrome.i18n.getMessage(`days_${n}`);
@@ -122,4 +122,4 @@ TableController.prototype.deselect = function() {
 
 utils.inherit(TableController, EventEmitter);
 
-module.exports = new TableController();
+export default new TableController();

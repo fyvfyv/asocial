@@ -13,7 +13,7 @@ function callSuper(method) {
     return superProto ? superProto.apply(this, args) : null;
 }
 
-module.exports = {
+export default {
     /**
      * Inherit prototypes from parent function.
      * @param  {Function} Parent

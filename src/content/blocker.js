@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     CHECKING_TIMEOUT: 5000,
     CHECKING_TIMEOUT_BEFORE_LOAD: 300,
 
