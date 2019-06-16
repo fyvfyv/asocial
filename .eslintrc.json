@@ -8,6 +8,10 @@
   "globals": {
     "chrome": true
   },
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
   "rules": {
     "indent": [ 2, 4 ],
     "quotes": [ 2, "single" ],
