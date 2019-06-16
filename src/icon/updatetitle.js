@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
-import utils from '../utils';
+import utils from '../utils'
 
-function setDefaultTitle() {
-    utils.setTitle('Asocial');
+function setDefaultTitle () {
+  utils.setTitle('Asocial')
 }
 
-chrome.tabs.onActivated.addListener(setDefaultTitle);
-chrome.tabs.onUpdated.addListener(setDefaultTitle);
+chrome.tabs.onActivated.addListener(setDefaultTitle)
+chrome.tabs.onUpdated.addListener(setDefaultTitle)
