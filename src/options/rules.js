@@ -1,12 +1,12 @@
-'use strict';
+'use strict'
 
-function Rules(rules) {
-    rules = rules.filter(Boolean);
+function Rules (rules) {
+  rules = rules.filter(Boolean)
 
-    this.storage = { rules };
+  this.storage = { rules }
 
-    this.add = this.add.bind(this);
-    this.remove = this.remove.bind(this);
+  this.add = this.add.bind(this)
+  this.remove = this.remove.bind(this)
 }
 
 /**
@@ -14,20 +14,20 @@ function Rules(rules) {
  *
  * @param {Rule} rule
  */
-Rules.prototype.add = function(rule) {
-    this.storage.rules.push(rule);
-    chrome.storage.sync.set(this.storage);
-};
+Rules.prototype.add = function (rule) {
+  this.storage.rules.push(rule)
+  chrome.storage.sync.set(this.storage)
+}
 
 /**
  * Remove rule from chrome.storage.
  *
  * @param {Number} number - number of rule in rule's array.
  */
-Rules.prototype.remove = function(number) {
-    this.storage.rules.splice(number, 1);
-    chrome.storage.sync.set(this.storage);
-};
+Rules.prototype.remove = function (number) {
+  this.storage.rules.splice(number, 1)
+  chrome.storage.sync.set(this.storage)
+}
 
 /**
  * Change rule in chrome.storage.
@@ -35,9 +35,9 @@ Rules.prototype.remove = function(number) {
  * @param {Number} number - number of rule in rule's array.
  * @param {Rule} rule
  */
-Rules.prototype.edit = function(number, rule) {
-    this.storage.rules[number] = rule;
-    chrome.storage.sync.set(this.storage);
-};
+Rules.prototype.edit = function (number, rule) {
+  this.storage.rules[number] = rule
+  chrome.storage.sync.set(this.storage)
+}
 
-module.exports = Rules;
+export default Rules

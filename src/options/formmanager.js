@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /**
  * Rule for blocking algorithm
@@ -30,166 +30,166 @@
  * @typedef {Number[]} RuleDays
  */
 
-var utils = require('../utils');
-var EventEmitter = require('./eventemitter');
-var TimeHelper = require('../timehelper');
+import utils from '../utils'
+import EventEmitter from './eventemitter'
+import TimeHelper from '../timehelper'
 
-function FormManager() {
-    this.form = document.querySelector('#add-rule-form');
-    this.days = this.form.elements.day;
-    this.networks = this.form.elements.network;
-    this.startTime = this.form.elements.start_time;
-    this.endTime = this.form.elements.end_time;
+function FormManager () {
+  this.form = document.querySelector('#add-rule-form')
+  this.days = this.form.elements.day
+  this.networks = this.form.elements.network
+  this.startTime = this.form.elements.start_time
+  this.endTime = this.form.elements.end_time
 
-    this.container = document.querySelector('#add-rule-container');
+  this.container = document.querySelector('#add-rule-container')
 
-    this.addButton = this.form.elements.add_button;
-    this.saveButton = this.form.elements.save_button;
+  this.addButton = this.form.elements.add_button
+  this.saveButton = this.form.elements.save_button
 
-    this.inputs = Array.prototype.slice.call(this.form.getElementsByTagName('input'), 0);
+  this.inputs = Array.prototype.slice.call(this.form.getElementsByTagName('input'), 0)
 
-    /**
-     * Fill form with rule.
-     * @param {Rule} rule
-     */
-    this.fill = (rule) => {
-        this.startTime.value = TimeHelper.formatTime(rule.start);
-        this.endTime.value = TimeHelper.formatTime(rule.end);
+  /**
+   * Fill form with rule.
+   * @param {Rule} rule
+   */
+  this.fill = (rule) => {
+    this.startTime.value = TimeHelper.formatTime(rule.start)
+    this.endTime.value = TimeHelper.formatTime(rule.end)
 
-        Array.prototype.forEach.call(this.days, (elem) => {
-            elem.checked = rule.days.indexOf(parseInt(elem.value, 10)) !== -1;
-        });
+    Array.prototype.forEach.call(this.days, (elem) => {
+      elem.checked = rule.days.indexOf(parseInt(elem.value, 10)) !== -1
+    })
 
-        Array.prototype.forEach.call(this.networks, (elem) => {
-            elem.checked = Boolean(rule.sites[elem.value]);
-        });
-    };
+    Array.prototype.forEach.call(this.networks, (elem) => {
+      elem.checked = Boolean(rule.sites[elem.value])
+    })
+  }
 
-    /**
-     * Parse form and make rule for blocking.
-     * @returns {Rule}
-     */
-    this.make = () => {
-        var rule = {};
+  /**
+   * Parse form and make rule for blocking.
+   * @returns {Rule}
+   */
+  this.make = () => {
+    const rule = {}
 
-        rule.start = TimeHelper.parse(this.startTime.value);
-        rule.end = TimeHelper.parse(this.endTime.value);
-        rule.sites = {};
+    rule.start = TimeHelper.parse(this.startTime.value)
+    rule.end = TimeHelper.parse(this.endTime.value)
+    rule.sites = {}
 
-        rule.days = Array.prototype.filter.call(this.days, elem => elem.checked)
-            .map(elem => parseInt(elem.value, 10));
+    rule.days = Array.prototype.filter.call(this.days, elem => elem.checked)
+      .map(elem => parseInt(elem.value, 10))
 
-        Array.prototype.forEach.call(this.networks, (elem) => {
-            rule.sites[elem.value] = elem.checked;
-        });
+    Array.prototype.forEach.call(this.networks, (elem) => {
+      rule.sites[elem.value] = elem.checked
+    })
 
-        return rule;
-    };
+    return rule
+  }
 
-    /**
-     * Check at least one input is filled.
-     * @param {NodeList} checkboxes
-     * @returns {Boolean}
-     */
-    this.validateCheckbox = (checkboxes) => {
-        return Array.prototype.some.call(checkboxes, elem => elem.checked);
-    };
+  /**
+   * Check at least one input is filled.
+   * @param {NodeList} checkboxes
+   * @returns {Boolean}
+   */
+  this.validateCheckbox = (checkboxes) => {
+    return Array.prototype.some.call(checkboxes, elem => elem.checked)
+  }
 
-    /**
-     * @returns {Boolean}
-     */
-    this.validateTime = () => {
-        var startArray = TimeHelper.parse(this.startTime.value);
-        var endArray = TimeHelper.parse(this.endTime.value);
+  /**
+   * @returns {Boolean}
+   */
+  this.validateTime = () => {
+    const startArray = TimeHelper.parse(this.startTime.value)
+    const endArray = TimeHelper.parse(this.endTime.value)
 
-        if (startArray && endArray) {
-            var result;
-            var startTime = new Date();
-            var endTime = new Date();
+    if (startArray && endArray) {
+      let result
+      const startTime = new Date()
+      const endTime = new Date()
 
-            startTime.setHours(startArray[0], startArray[1], 0);
-            endTime.setHours(endArray[0], endArray[1], 0);
+      startTime.setHours(startArray[0], startArray[1], 0)
+      endTime.setHours(endArray[0], endArray[1], 0)
 
-            result = startTime <= endTime;
+      result = startTime <= endTime
 
-            this.endTime.classList.toggle('onerror', !result);
+      this.endTime.classList.toggle('onerror', !result)
 
-            return result;
-        }
-        return true;
-    };
+      return result
+    }
+    return true
+  }
 
-    /**
-     * Check validity of time and at least one input filled.
-     * @returns {Boolean} - true - valid, false - invalid.
-     */
-    this.check = () => {
-        var isTimeValid = this.validateTime();
-        var isValid = this.startTime.checkValidity() || this.endTime.checkValidity() ||
-            this.validateCheckbox(this.days) || this.validateCheckbox(this.networks);
-        var isFormValid = isValid && isTimeValid;
+  /**
+   * Check validity of time and at least one input filled.
+   * @returns {Boolean} - true - valid, false - invalid.
+   */
+  this.check = () => {
+    const isTimeValid = this.validateTime()
+    const isValid = this.startTime.checkValidity() || this.endTime.checkValidity() ||
+            this.validateCheckbox(this.days) || this.validateCheckbox(this.networks)
+    const isFormValid = isValid && isTimeValid
 
-        this.addButton.disabled = this.saveButton.disabled = ! isFormValid;
+    this.addButton.disabled = this.saveButton.disabled = !isFormValid
 
-        return isFormValid;
-    };
+    return isFormValid
+  }
 
-    /**
-     * Enable or disable form buttons based on form validity
-     */
-    this.toggleButtons = () => {
-        this.addButton.disabled = this.saveButton.disabled = !this.check();
-    };
+  /**
+   * Enable or disable form buttons based on form validity
+   */
+  this.toggleButtons = () => {
+    this.addButton.disabled = this.saveButton.disabled = !this.check()
+  }
 
-    /**
-     * Show add/change form in the page.
-     * @param {String} mode One of 'add' and 'save'
-     */
-    this.show = (mode) => {
-        this.endTime.classList.toggle('onerror', !this.validateTime());
-        this.startTime.addEventListener('blur', this.validateTime);
-        this.endTime.addEventListener('blur', this.validateTime);
+  /**
+   * Show add/change form in the page.
+   * @param {String} mode One of 'add' and 'save'
+   */
+  this.show = (mode) => {
+    this.endTime.classList.toggle('onerror', !this.validateTime())
+    this.startTime.addEventListener('blur', this.validateTime)
+    this.endTime.addEventListener('blur', this.validateTime)
 
-        this.inputs.forEach((input) => {
-            input.addEventListener('change', this.toggleButtons);
-        });
+    this.inputs.forEach((input) => {
+      input.addEventListener('change', this.toggleButtons)
+    })
 
-        this.form.classList.toggle('form-mode-add', mode === 'add');
-        this.form.classList.toggle('form-mode-edit', mode === 'edit');
-        this.container.classList.add('showed');
-        this.trigger('show');
-    };
+    this.form.classList.toggle('form-mode-add', mode === 'add')
+    this.form.classList.toggle('form-mode-edit', mode === 'edit')
+    this.container.classList.add('showed')
+    this.trigger('show')
+  }
 
-    this.hide = () => {
-        this.container.classList.remove('showed');
-        this.startTime.removeEventListener('blur', this.validateTime);
-        this.endTime.removeEventListener('blur', this.validateTime);
+  this.hide = () => {
+    this.container.classList.remove('showed')
+    this.startTime.removeEventListener('blur', this.validateTime)
+    this.endTime.removeEventListener('blur', this.validateTime)
 
-        this.inputs.forEach((input) => {
-            input.removeEventListener('change', this.toggleButtons);
-        });
+    this.inputs.forEach((input) => {
+      input.removeEventListener('change', this.toggleButtons)
+    })
 
-        this.trigger('hide');
-    };
+    this.trigger('hide')
+  }
 
-    this.addButton.addEventListener('click', (e) => {
-        e.preventDefault();
+  this.addButton.addEventListener('click', (e) => {
+    e.preventDefault()
 
-        if (this.check()) {
-            this.trigger('add', this.make());
-        }
-    });
+    if (this.check()) {
+      this.trigger('add', this.make())
+    }
+  })
 
-    this.saveButton.addEventListener('click', (e) => {
-        e.preventDefault();
+  this.saveButton.addEventListener('click', (e) => {
+    e.preventDefault()
 
-        if (this.check()) {
-            this.trigger('save', this.make());
-            this.hide();
-        }
-    });
+    if (this.check()) {
+      this.trigger('save', this.make())
+      this.hide()
+    }
+  })
 }
 
-utils.inherit(FormManager, EventEmitter);
+utils.inherit(FormManager, EventEmitter)
 
-module.exports = new FormManager();
+export default new FormManager()

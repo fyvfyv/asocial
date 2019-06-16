@@ -1,5 +1,5 @@
-'use strict';
+'use strict'
 
-require('./event/disable.js');
-require('./icon/click.js');
-require('./icon/updatetitle');
+import './event/disable.js'
+import './icon/click.js'
+import './icon/updatetitle'
