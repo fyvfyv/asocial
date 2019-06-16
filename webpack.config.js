@@ -2,6 +2,7 @@
 
 module.exports = [
     {
+        mode: 'production',
         entry: {
             vk: './src/content/networks/vk.js',
             fb: './src/content/networks/facebook.js',
@@ -16,6 +17,7 @@ module.exports = [
         }
     },
     {
+        mode: 'production',
         entry: './src/options/options.js',
 
         output: {
@@ -23,6 +25,7 @@ module.exports = [
         }
     },
     {
+        mode: 'production',
         entry: './src/background.js',
 
         output: {
