@@ -1,8 +1,5 @@
 {
   "extends": "eslint:recommended",
-  "ecmaFeatures": {
-    "blockBindings": true
-  },
   "env": {
     "browser": true,
     "commonjs": true,
