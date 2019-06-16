@@ -11,7 +11,7 @@
     width: 590px;
 }
 
-@media(min-width: 1236px) {
+@media (min-width: 1236px) {
     body.three-col .asocial_block {
         float: left;
         margin: 0 10px;
@@ -23,7 +23,7 @@
     width: 100%;
 }
 
-@media(min-width: 1236px) {
+@media (min-width: 1236px) {
     body.three-col.win10-wrapper .asocial_block {
         float: left;
         margin: 0;
