@@ -2,8 +2,8 @@
   "extends": "stylelint-config-standard",
   "rules": {
     "indentation": 4,
-    "block-opening-brace-space-before": "never-single-line",
+    "block-opening-brace-space-before": "always-single-line",
     "block-opening-brace-newline-after": "always",
-    "block-opening-brace-newline-before": "always",
+    "block-opening-brace-newline-before": "never-single-line"
   }
 }
