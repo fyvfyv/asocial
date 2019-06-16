@@ -43,7 +43,7 @@ EventEmitter.prototype.trigger = function(event, data) {
  * @param  {Function} callback
  */
 EventEmitter.prototype.un = function(event, callback) {
-    var callbackIndex = this.__events[event].indexOf(callback);
+    const callbackIndex = this.__events[event].indexOf(callback);
     if (callbackIndex >= 0) {
         this.__events[event].splice(callbackIndex, 1);
     }

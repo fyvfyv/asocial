@@ -5,10 +5,10 @@ import Rules from './rules';
 import TableController from './table';
 import translate from './translate';
 
-var rulesContainer;
-var currentRule;
+let rulesContainer;
+let currentRule;
 
-var addButton = document.querySelector('#add-button');
+const addButton = document.querySelector('#add-button');
 
 
 addButton.addEventListener('click', () => FormManager.show('add'));

@@ -6,7 +6,7 @@ function makeAsocialBlock() {
     /**
      * @constant {HTMLElement} ASOCIAL_BLOCK - substitute for news block.
      */
-    var ASOCIAL_BLOCK = document.createElement('div');
+    const ASOCIAL_BLOCK = document.createElement('div');
 
     ASOCIAL_BLOCK.classList.add('asocial_block');
     ASOCIAL_BLOCK.textContent = chrome.i18n.getMessage('motivateMessage');
@@ -18,10 +18,10 @@ function replaceNewsBlock() {
     /**
      * @constant {HTMLElement} NEWS_BLOCK - substituted news block.
      */
-    var NEWS_BLOCK = document.querySelector('#SHORTCUT_FOCUSABLE_DIV > div > div');
+    const NEWS_BLOCK = document.querySelector('#SHORTCUT_FOCUSABLE_DIV > div > div');
 
     if (NEWS_BLOCK) {
-        var newsParent = NEWS_BLOCK.parentNode;
+        const newsParent = NEWS_BLOCK.parentNode;
 
         newsParent.insertBefore(makeAsocialBlock(), NEWS_BLOCK);
         newsParent.removeChild(NEWS_BLOCK);

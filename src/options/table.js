@@ -14,12 +14,12 @@ function TableController() {
     this.templateRow = document.querySelector('#row-template').content.querySelector('.rule-line');
 
     this.rulesTable.addEventListener('click', (e) => {
-        var target = e.target;
+        const target = e.target;
 
         if (target.dataset.delete) {
             this.trigger('remove', target.dataset.delete);
         } else {
-            var number = target.dataset.number || target.parentNode.dataset.number;
+            const number = Number(target.dataset.number) || Number(target.parentNode.dataset.number);
 
             this.select(number);
             this.trigger('click', number);
@@ -44,7 +44,7 @@ TableController.prototype.getDays = function(days) {
  * @returns {Element}
  */
 TableController.prototype.getNetworkIcon = function(network) {
-    var networkBlock = document.createElement('span');
+    const networkBlock = document.createElement('span');
     networkBlock.classList.add('icon', `icon-${network}`);
     return networkBlock;
 };
@@ -54,7 +54,7 @@ TableController.prototype.getNetworkIcon = function(network) {
  * @returns {Text|DocumentFragment} - block with social network icons
  */
 TableController.prototype.getSites = function(sites) {
-    var sitesFilter = Object.keys(sites).filter(k => sites[k]).sort();
+    const sitesFilter = Object.keys(sites).filter(k => sites[k]).sort();
 
     return sitesFilter.length ?
         utils.getFragment(sitesFilter.map(this.getNetworkIcon)) :
@@ -69,16 +69,16 @@ TableController.prototype.getSites = function(sites) {
  * @returns {Node} - table row with rule.
  */
 TableController.prototype.row = function(rule, number) {
-    var row = this.templateRow.cloneNode(true);
-    var buttonDelete = row.querySelector('.btn-delete');
+    const row = this.templateRow.cloneNode(true);
+    const buttonDelete = row.querySelector('.btn-delete');
 
     row.querySelector('.days').textContent = this.getDays(rule.days);
     row.querySelector('.time').innerHTML = TimeHelper.formatPeriod(rule.start, rule.end);
     row.querySelector('.networks').appendChild(this.getSites(rule.sites));
-    buttonDelete.dataset.delete = number;
+    buttonDelete.dataset.delete = String(number);
     buttonDelete.title = chrome.i18n.getMessage('delete');
 
-    row.dataset.number = number;
+    row.dataset.number = String(number);
 
     if (utils.checkRule(new Date(), rule)) {
         row.classList.add('rule-line-active');
@@ -95,7 +95,7 @@ TableController.prototype.row = function(rule, number) {
 TableController.prototype.table = function(rules) {
     this.rulesTable.innerHTML = '';
     this.rulesTable.appendChild(utils.getFragment(rules.map(this.row, this)));
-    this.rulesTable.classList.toggle('time-table-empty', rules.lenght === 0);
+    this.rulesTable.classList.toggle('time-table-empty', rules.length === 0);
 };
 
 TableController.prototype.SELECTED_RULE = 'rule-line-selected';
@@ -113,7 +113,7 @@ TableController.prototype.select = function(ruleNumber) {
  * Remove highlighting from rule
  */
 TableController.prototype.deselect = function() {
-    var selectedRule = this.rulesTable.querySelector('.' + this.SELECTED_RULE);
+    const selectedRule = this.rulesTable.querySelector('.' + this.SELECTED_RULE);
 
     if (selectedRule) {
         selectedRule.classList.remove(this.SELECTED_RULE);

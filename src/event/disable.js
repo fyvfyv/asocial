@@ -5,7 +5,7 @@ import TimeHelper from '../timehelper';
 
 chrome.runtime.onMessage.addListener(function(network, sender) {
     shouldDisable(network, function(enabledRules) {
-        var isSiteBlocked = enabledRules.length > 0;
+        const isSiteBlocked = enabledRules.length > 0;
 
         chrome.tabs.sendMessage(
             sender.tab.id,
@@ -25,9 +25,9 @@ chrome.runtime.onMessage.addListener(function(network, sender) {
  */
 function shouldDisable(network, callback) {
     chrome.storage.sync.get('rules', rulesContainer => {
-        var currentTime = new Date();
+        const currentTime = new Date();
 
-        var enabledRules = (rulesContainer.rules || []).filter(rule => utils.checkRule(currentTime, rule, network));
+        const enabledRules = (rulesContainer.rules || []).filter(rule => utils.checkRule(currentTime, rule, network));
 
         callback(enabledRules);
     });
@@ -45,14 +45,14 @@ function changeTitle(enabledRules) {
         return;
     }
 
-    var endRule = enabledRules.reduce(function(prev, current) {
+    const endRule = enabledRules.reduce(function(prev, current) {
         if (current.end) {
             return TimeHelper.formatTime(prev.end) > TimeHelper.formatTime(current.end) ? prev : current;
         }
         return current;
     });
 
-    var endTime = endRule.end ? TimeHelper.formatTime(endRule.end) : chrome.i18n.getMessage('title_tomorrow');
+    const endTime = endRule.end ? TimeHelper.formatTime(endRule.end) : chrome.i18n.getMessage('title_tomorrow');
 
     utils.setTitle(`${chrome.i18n.getMessage('title_closed')} ${endTime}`);
 }

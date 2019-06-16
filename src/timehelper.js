@@ -8,12 +8,12 @@ var TimeHelper = {
      * @returns {*}
      */
     parse: function(str) {
-        var timePattern = /^([0-9]{1,2})[.:, ]?([0-9]{2})/;
-        var times = timePattern.exec(str);
+        const timePattern = /^([0-9]{1,2})[.:, ]?([0-9]{2})/;
+        const times = timePattern.exec(str);
 
         if (times) {
-            var hours = parseInt(times[1], 10);
-            var minutes = parseInt(times[2], 10);
+            let hours = parseInt(times[1], 10);
+            let minutes = parseInt(times[2], 10);
 
             hours = Math.min(hours, 23);
             minutes = Math.min(minutes, 59);

@@ -12,7 +12,7 @@ export default {
     check: function check(network) {
         chrome.runtime.sendMessage(network);
 
-        var checkingTimeout = this.DOMContentLoaded ? this.CHECKING_TIMEOUT : this.CHECKING_TIMEOUT_BEFORE_LOAD;
+        const checkingTimeout = this.DOMContentLoaded ? this.CHECKING_TIMEOUT : this.CHECKING_TIMEOUT_BEFORE_LOAD;
 
         setTimeout(() => this.check(network), checkingTimeout);
     },
@@ -25,7 +25,7 @@ export default {
             return;
         }
 
-        var style = document.createElement('style');
+        const style = document.createElement('style');
 
         style.id = 'asocial_lock';
         style.innerHTML = 'html { opacity: 0 }';
@@ -42,7 +42,7 @@ export default {
             return;
         }
 
-        var style = document.head.querySelector('#asocial_lock');
+        const style = document.head.querySelector('#asocial_lock');
 
         if (style) {
             document.head.removeChild(style);
@@ -79,7 +79,7 @@ export default {
      * @param {String} network - name of network(e.g. vk)
      */
     onDocumentLoaded: function(network) {
-        var asocialContentObserver = new MutationObserver(function() {
+        const asocialContentObserver = new MutationObserver(function() {
             chrome.runtime.sendMessage(network);
         });
 
@@ -95,7 +95,7 @@ export default {
      * @param  {Function} newsBlocker - function, which replaces news block to asocial block
      */
     init: function init(network, newsBlocker) {
-        var onFirstMessage = (shouldDisable) => {
+        const onFirstMessage = (shouldDisable) => {
             // If site should be blocked, hide everything on the page
             if (shouldDisable) {
                 this.hideDocument();

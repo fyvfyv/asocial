@@ -7,8 +7,8 @@
  * @return {*} - returned result.
 */
 function callSuper(method) {
-    var args = Array.prototype.slice.call(arguments, 1);
-    var superProto = this.constructor.__super.prototype[method];
+    const args = Array.prototype.slice.call(arguments, 1);
+    const superProto = this.constructor.__super.prototype[method];
 
     return superProto ? superProto.apply(this, args) : null;
 }
@@ -32,7 +32,7 @@ export default {
      * @returns {DocumentFragment}
      */
     getFragment: function getFragment(array) {
-        var df = document.createDocumentFragment();
+        const df = document.createDocumentFragment();
 
         array.forEach(df.appendChild, df);
 
@@ -44,12 +44,12 @@ export default {
      *
      * @param  {Date} time
      * @param  {Object} rule
-     * @param  {String} network
+     * @param  {String=} network
      * @return {Boolean}
      */
     checkRule: function checkRule(time, rule, network) {
         if (network) {
-            var disabledNetworks = Object.keys(rule.sites).filter(network => rule.sites[network]);
+            const disabledNetworks = Object.keys(rule.sites).filter(network => rule.sites[network]);
 
             if (disabledNetworks.length > 0 && !rule.sites[network]) {
                 return false;
@@ -60,10 +60,10 @@ export default {
             return false;
         }
 
-        var startTime = new Date();
-        var endTime = new Date();
-        var isAfterStart = true;
-        var isBeforeEnd = true;
+        const startTime = new Date();
+        const endTime = new Date();
+        let isAfterStart = true;
+        let isBeforeEnd = true;
 
         if (rule.start) {
             startTime.setHours(...rule.start, 0, 0);

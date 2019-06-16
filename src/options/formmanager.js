@@ -70,7 +70,7 @@ function FormManager() {
      * @returns {Rule}
      */
     this.make = () => {
-        var rule = {};
+        const rule = {};
 
         rule.start = TimeHelper.parse(this.startTime.value);
         rule.end = TimeHelper.parse(this.endTime.value);
@@ -99,13 +99,13 @@ function FormManager() {
      * @returns {Boolean}
      */
     this.validateTime = () => {
-        var startArray = TimeHelper.parse(this.startTime.value);
-        var endArray = TimeHelper.parse(this.endTime.value);
+        const startArray = TimeHelper.parse(this.startTime.value);
+        const endArray = TimeHelper.parse(this.endTime.value);
 
         if (startArray && endArray) {
-            var result;
-            var startTime = new Date();
-            var endTime = new Date();
+            let result;
+            const startTime = new Date();
+            const endTime = new Date();
 
             startTime.setHours(startArray[0], startArray[1], 0);
             endTime.setHours(endArray[0], endArray[1], 0);
@@ -124,10 +124,10 @@ function FormManager() {
      * @returns {Boolean} - true - valid, false - invalid.
      */
     this.check = () => {
-        var isTimeValid = this.validateTime();
-        var isValid = this.startTime.checkValidity() || this.endTime.checkValidity() ||
+        const isTimeValid = this.validateTime();
+        const isValid = this.startTime.checkValidity() || this.endTime.checkValidity() ||
             this.validateCheckbox(this.days) || this.validateCheckbox(this.networks);
-        var isFormValid = isValid && isTimeValid;
+        const isFormValid = isValid && isTimeValid;
 
         this.addButton.disabled = this.saveButton.disabled = ! isFormValid;
 
