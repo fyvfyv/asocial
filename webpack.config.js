@@ -13,7 +13,8 @@ module.exports = [
     },
 
     output: {
-      filename: 'asocial/content/[name].js'
+      path: __dirname,
+      filename: './asocial/content/[name].js'
     }
   },
   {
@@ -21,7 +22,8 @@ module.exports = [
     entry: './src/options/options.js',
 
     output: {
-      filename: 'asocial/options/options.js'
+      path: __dirname,
+      filename: './asocial/options/options.js'
     }
   },
   {
@@ -29,7 +31,8 @@ module.exports = [
     entry: './src/background.js',
 
     output: {
-      filename: 'asocial/background/background.js'
+      path: __dirname,
+      filename: './asocial/background/background.js'
     }
   }
 ]
