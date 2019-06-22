@@ -8,8 +8,11 @@ const TimeHelper = {
    * @returns {*}
    */
   parse: function (str) {
-    const timePattern = /^([0-9]{1,2})[.:, ]?([0-9]{2})/
+    const timePattern = /^([0-9]{1,2})[.:, ]?([0-9]{2})$/
+    const hoursPattern = /^[0-9]{1,2}$/
+
     const times = timePattern.exec(str)
+    const hoursOnly = hoursPattern.exec(str)
 
     if (times) {
       let hours = parseInt(times[1], 10)
@@ -17,6 +20,15 @@ const TimeHelper = {
 
       hours = Math.min(hours, 23)
       minutes = Math.min(minutes, 59)
+
+      return [hours, minutes]
+    }
+
+    if (hoursOnly) {
+      let hours = parseInt(hoursOnly[0], 10)
+      const minutes = 0
+
+      hours = Math.min(hours, 23)
 
       return [hours, minutes]
     }
