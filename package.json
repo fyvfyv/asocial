@@ -1,6 +1,6 @@
 {
   "name": "asocial",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Browser extension to block feeds in social networks",
   "main": "index.js",
   "scripts": {
