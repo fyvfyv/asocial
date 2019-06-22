@@ -4,7 +4,7 @@
   "name": "Asocial 2",
   "default_locale": "en",
   "description": "Hide newsfeed of popular social networks on schedule. Supported sites: Facebook, Twitter, Vk.com, Ok.ru, Reddit, Youtube.",
-  "version": "0.0.1",
+  "version": "1.0.0",
 
   "browser_action": {
     "default_icon": "./icons/icon.png"
