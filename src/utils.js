@@ -95,9 +95,9 @@ export default {
   setIcon: function setIcon (isActive) {
     chrome.browserAction.setIcon({
       path: {
-        '48': `./icons/${isActive ? 'active-' : ''}icon-48.png`,
-        '64': `./icons/${isActive ? 'active-' : ''}icon-64.png`,
-        '128': `./icons/${isActive ? 'active-' : ''}icon-128.png`
+        48: `./icons/${isActive ? 'active-' : ''}icon-48.png`,
+        64: `./icons/${isActive ? 'active-' : ''}icon-64.png`,
+        128: `./icons/${isActive ? 'active-' : ''}icon-128.png`
       }
     })
   }
