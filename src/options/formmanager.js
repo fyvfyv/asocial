@@ -103,14 +103,13 @@ function FormManager () {
     const endArray = TimeHelper.parse(this.endTime.value)
 
     if (startArray && endArray) {
-      let result
       const startTime = new Date()
       const endTime = new Date()
 
       startTime.setHours(startArray[0], startArray[1], 0)
       endTime.setHours(endArray[0], endArray[1], 0)
 
-      result = startTime <= endTime
+      const result = startTime <= endTime
 
       this.endTime.classList.toggle('onerror', !result)
 
